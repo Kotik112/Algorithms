@@ -1,8 +1,15 @@
-class ArraySorter:
-    array = [5, 2, 4, 6, 1, 3]
+from random import randint
 
-    def reset_array(self):
-        self.array = [5, 2, 4, 6, 1, 3]
+ARRAY_SIZE = 10
+
+class ArraySorter:
+    # array = []
+
+    def construct_array(self, n):
+        self.array = []
+        for i in range(0, n):
+            self.array.append(randint(0, 10))
+
 
     # Not stable
     def selection_sort(self):
@@ -77,18 +84,19 @@ if __name__ == '__main__':
     array_sorter = ArraySorter()
 
     # Insert sort test
+    array_sorter.construct_array(ARRAY_SIZE)
+    result = array_sorter.insertion_sort()
     print("Insert sort = ", end=" ")
-    result = array_sorter.insert_sort()
     print(result)
-    array_sorter.reset_array()
 
     # Selection sort
-    print("Selection sort =", end=" ")
+    array_sorter.construct_array(ARRAY_SIZE)
     result = array_sorter.selection_sort()
+    print("Selection sort =", end=" ")
     print(result)
-    array_sorter.reset_array()
 
     # Merge sort
-    print("Merge sort =", end=" ")
+    array_sorter.construct_array(ARRAY_SIZE)
     result = array_sorter.merge_sort(array_sorter.array)
+    print("Merge sort =", end=" ")
     print(result)

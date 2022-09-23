@@ -31,7 +31,7 @@ class LinkedList:
 if __name__ == '__main__':
     node = Node(1)
     family = LinkedList()
-    family.head = Node("Arman")
+    family.head = Node("Mike")
     wife = Node("Myra")
     first_kid = Node("Lilly")
     second_kid = Node("Martin")
